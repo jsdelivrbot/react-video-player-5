@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 
 import SearchBar from './searchBar';
+import VideoList from './videoList';
 
 import config from '../../config.json';
 const API_KEY = config.key;
@@ -14,6 +15,7 @@ export default class App extends Component {
 
 		YTSearch({key: API_KEY, term: 'basket case'}, (videos) => {
 			this.setState({ videos });
+			console.log(videos);
 		});
 	}
 
@@ -22,6 +24,7 @@ export default class App extends Component {
     		<div>
       			<div>React Video Player</div>
       			<SearchBar />
+      			<VideoList videos={this.state.videos} />
       		</div>
     	);
   	}
