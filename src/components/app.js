@@ -4,6 +4,7 @@ import YTSearch from 'youtube-api-search';
 
 import SearchBar from './searchBar';
 import VideoList from './videoList';
+import VideoDetail from './videoDetail';
 
 import config from '../../config.json';
 const API_KEY = config.key;
@@ -24,6 +25,7 @@ export default class App extends Component {
     		<div>
       			<div>React Video Player</div>
       			<SearchBar />
+      			<VideoDetail video={this.state.videos[0]} />
       			<VideoList videos={this.state.videos} />
       		</div>
     	);
